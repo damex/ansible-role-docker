@@ -1,0 +1,7 @@
+---
+- name: ensure docker official gpg key is present
+  apt_key:
+    id: 0EBFCD88
+    url: https://download.docker.com/linux/debian/gpg
+    state: present
+  become: true
