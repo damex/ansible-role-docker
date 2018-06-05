@@ -1,0 +1,7 @@
+---
+- name: ensure daemon.json is correct
+  template:
+    src: "daemon.json.j2"
+    dest: "/etc/docker/daemon.json"
+  notify: docker service reload
+  become: true
