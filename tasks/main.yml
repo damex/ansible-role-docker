@@ -16,4 +16,14 @@
     packages:
       - docker-ce
       - docker-compose
+- include_role:
+    name: package
+  vars:
+    packages:
+      - python-docker
+      - python-dockerpty
+      - python-dockerpycreds
+      - python3-docker
+      - python3-dockerpty
+      - python3-dockerpycreds
 - import_tasks: daemon.yml
