@@ -3,5 +3,3 @@ docker_repository: "deb [arch=amd64] https://download.docker.com/linux/{{ ansibl
 
 dockerd_storage_driver: "overlay2"
 dockerd_live_restore: "true"
-
-packages: []
