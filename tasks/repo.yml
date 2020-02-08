@@ -1,7 +1,0 @@
----
-- name: ensure docker apt repository is present
-  apt_repository:
-    repo: "{{ docker_repository }}"
-    state: "present"
-    update_cache: true
-  become: true

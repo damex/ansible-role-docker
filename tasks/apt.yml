@@ -1,0 +1,10 @@
+---
+- name: ensure docker and docker-compose packages
+  include_role:
+    name: "apt"
+  vars:
+    apt_packages:
+      - name: "{{ docker_package_name }}"
+        state: "{{ docker_package_state }}"
+      - name: "{{ docker_compose_package_name }}"
+        state: "{{ docker_compose_package_state }}"

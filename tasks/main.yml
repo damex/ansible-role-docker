@@ -1,26 +1,8 @@
 ---
-- include_role:
-    name: package
-  vars:
-    packages:
-      - apt-transport-https
-      - ca-certificates
-      - curl
-      - gnupg2
-      - software-properties-common
-- import_tasks: key.yml
-- import_tasks: repo.yml
-- include_role:
-    name: package
-  vars:
-    packages:
-      - docker-ce
-      - docker-compose
-- include_role:
-    name: package
-  vars:
-    packages:
-      - python3-docker
-      - python3-dockerpty
-      - python3-dockerpycreds
-- import_tasks: daemon.yml
+- name: ensure docker
+  block:
+    - import_tasks: environment.yml
+    - import_tasks: daemon.json.yml
+    - import_tasks: systemd.yml
+  tags:
+    - docker
