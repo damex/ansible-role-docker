@@ -1,9 +1,13 @@
 ---
 galaxy_info:
-  author: Roman Kuzmitsky
-  description: role that contain docker configuration
+  role_name: docker
+  author: Roman Kuzmitskii
+  description: docker role
   license: GPLv2
-  min_ansible_version: 2.5
+  min_ansible_version: 2.8
   galaxy_tags: []
-dependencies:
-  - role: package
+  platforms:
+    - name: "Debian"
+      versions:
+        - "buster"
+dependencies: []

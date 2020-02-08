@@ -1,0 +1,10 @@
+---
+- name: ensure daemon.json
+  template:
+    src: "daemon.json.j2"
+    dest: "{{ docker_daemon_json_file }}"
+    group: "root"
+    owner: "root"
+    mode: 0644
+  become: true
+  register: docker_daemon_json

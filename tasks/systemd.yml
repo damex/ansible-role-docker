@@ -1,0 +1,17 @@
+---
+- name: ensure systemd configuration
+  block:
+    - name: ensure docker service is enabled
+      systemd:
+        name: "{{ docker_service_name }}"
+        enabled: true
+    - name: ensure docker service is started
+      systemd:
+        name: "{{ docker_service_name }}"
+        state: started
+    - name: ensure docker service is restarted
+      systemd:
+        name: "{{ docker_service_name }}"
+        state: restarted
+      when: docker_daemon_json.changed
+  become: true
