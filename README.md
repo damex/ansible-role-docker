@@ -1,6 +1,6 @@
 # ansible docker role
 
-[![Build Status](https://travis-ci.org/damex/ansible-role-docker.svg?branch=master)](https://travis-ci.org/damex/ansible-role-docker)
+[![Build Status](https://travis-ci.com/damex/ansible-role-docker.svg?branch=master)](https://travis-ci.com/damex/ansible-role-docker)
 
 The docker role is designed to be used with Debian distributive.
 
