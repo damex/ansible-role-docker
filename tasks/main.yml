@@ -2,6 +2,7 @@
 - name: ensure docker
   block:
     - import_tasks: environment.yml
+    - import_tasks: packages.yml
     - import_tasks: daemon.json.yml
     - import_tasks: systemd.yml
   tags:
