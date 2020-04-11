@@ -1,4 +1,5 @@
 {
   "storage-driver": "{{ docker_dockerd_storage_driver }}",
-  "live-restore": {{ docker_dockerd_live_restore | lower }}
+  "live-restore": {{ docker_dockerd_live_restore | lower }},
+  "bridge": "{{ docker_dockerd_bridge }}"
 }
