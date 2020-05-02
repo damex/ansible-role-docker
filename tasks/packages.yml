@@ -5,6 +5,8 @@
   vars:
     package_packages:
       - name: "{{ docker_package_name }}"
+        version: "{{ docker_package_version }}"
         state: "{{ docker_package_state }}"
       - name: "{{ docker_compose_package_name }}"
+        version: "{{ docker_compose_package_version }}"
         state: "{{ docker_compose_package_state }}"
