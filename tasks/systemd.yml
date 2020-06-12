@@ -1,17 +1,8 @@
 ---
-- name: ensure systemd configuration
-  block:
-    - name: ensure docker service is enabled
-      systemd:
-        name: "{{ docker_service_name }}"
-        enabled: true
-    - name: ensure docker service is started
-      systemd:
-        name: "{{ docker_service_name }}"
-        state: started
-    - name: ensure docker service is restarted
-      systemd:
-        name: "{{ docker_service_name }}"
-        state: restarted
-      when: docker_daemon_json.changed
-  become: true
+- name: ensure systemd service
+  include_role:
+    name: "damex.systemd"
+  vars:
+    systemd_services:
+      - name: "{{ docker_service_name }}"
+        restart_on: "docker_daemon_json.changed"
