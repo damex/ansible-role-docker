@@ -1,8 +1,7 @@
 ---
 - name: ensure systemd service
   include_role:
-    name: "damex.systemd"
+    name: "damex.systemd_service"
   vars:
-    systemd_services:
-      - name: "{{ docker_service_name }}"
-        restart_on: "docker_daemon_json.changed"
+    systemd_service_name: "{{ docker_service_name }}"
+    systemd_service_restart_on: "docker_daemon_json.changed"
