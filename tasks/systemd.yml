@@ -5,12 +5,4 @@
   vars:
     systemd_services:
       - name: "{{ docker_service_name }}"
-
-- name: ensure systemd service is restarted
-  include_role:
-    name: "damex.systemd"
-  vars:
-    systemd_services:
-      - name: "{{ docker_service_name }}"
-        state: "restarted"
-  when: docker_daemon_json.changed
+        restart_on: "docker_daemon_json.changed"
